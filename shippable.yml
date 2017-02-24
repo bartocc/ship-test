@@ -1,0 +1,26 @@
+language: node_js
+
+build_image: shippableimages/ubuntu1404_nodejs
+
+env:
+  CI=true
+
+node_js: 0.12
+
+before_install:
+  - apt-get update --yes && apt-get install --yes phantomjs libfreetype6 libfontconfig
+  - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+  - node --version
+  - npm install -g bower
+  - npm install -g ember-cli
+
+install:
+  - npm install
+  - bower --allow-root install
+
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+script:
+  - ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
