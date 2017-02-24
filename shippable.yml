@@ -4,14 +4,12 @@ env:
   CI=true
 
 node_js:
-   - 4.2.3
+   - 0.12
 
 before_install:
-  - apt-get update --yes && apt-get install --yes phantomjs libfreetype6 libfontconfig
-  - nvm install $SHIPPABLE_NODE_VERSION
   - node --version
-  - npm install -g bower
   - npm install -g ember-cli
+  - pwd
 
 install:
   - npm install
