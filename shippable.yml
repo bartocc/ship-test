@@ -7,17 +7,16 @@ node_js:
    - 0.12
 
 before_install:
-  - pwd
   - node --version
-  - npm install -g ember-cli
 
 install:
   - npm install
-  - bower --allow-root install
+  - ./node_modules/ember-cli/bin/ember --version
+  - bower install
 
 before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
 
 script:
-  - ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
+  - ./node_modules/ember-cli/bin/ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
