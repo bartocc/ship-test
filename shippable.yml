@@ -4,7 +4,7 @@ env:
   CI=true
 
 node_js:
-   - 7.5
+   - 0.12
 
 before_install:
   - node --version
@@ -16,3 +16,6 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - ./node_modules/ember-cli/bin/ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules
