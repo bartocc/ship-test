@@ -9,14 +9,9 @@ node_js:
 before_install:
   - node --version
 
-install:
-  - npm install
-  - ./node_modules/ember-cli/bin/ember --version
-  - bower install
-
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-  - ./node_modules/ember-cli/bin/ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
+build:
+  ci:
+    - bower --allow-root install
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - ./node_modules/ember-cli/bin/ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
