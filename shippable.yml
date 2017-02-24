@@ -4,8 +4,7 @@ env:
   CI=true
 
 node_js:
-   - 0.12
-
+   - 7.5
 
 before_install:
   - node --version
