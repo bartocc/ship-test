@@ -6,11 +6,9 @@ env:
 node_js:
    - 0.12
 
-before_install:
-  - node --version
-
 build:
   ci:
+    - node --version
     - npm install
     - bower --allow-root install
     - mkdir -p shippable/testresults
