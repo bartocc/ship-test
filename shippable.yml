@@ -9,7 +9,7 @@ node_js: 0.12
 
 before_install:
   - apt-get update --yes && apt-get install --yes phantomjs libfreetype6 libfontconfig
-  - source ~/.nvm/nvm.sh && nvm install $SHIPPABLE_NODE_VERSION
+  - nvm install $SHIPPABLE_NODE_VERSION
   - node --version
   - npm install -g bower
   - npm install -g ember-cli
