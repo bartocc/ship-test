@@ -7,9 +7,9 @@ node_js:
    - 0.12
 
 before_install:
+  - pwd
   - node --version
   - npm install -g ember-cli
-  - pwd
 
 install:
   - npm install
