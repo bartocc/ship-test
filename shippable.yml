@@ -13,7 +13,7 @@ build:
     - bower --allow-root install
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
-    - ./node_modules/ember-cli/bin/ember test --reporter=xunit |tail -1 > shippable/testresults/result.xml
+    - ./node_modules/ember-cli/bin/ember test --reporter=xunit > shippable/testresults/result.xml
   cache: true
   cache_dir_list:
     - $SHIPPABLE_BUILD_DIR/node_modules
