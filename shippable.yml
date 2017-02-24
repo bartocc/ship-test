@@ -12,6 +12,7 @@ before_install:
 
 build:
   ci:
+    - npm install
     - bower --allow-root install
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
