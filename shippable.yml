@@ -8,11 +8,10 @@ node_js:
 
 build:
   ci:
-    - node --version
+    - npm install -g istanbul
     - npm install
     - bower --allow-root install
     - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
     - ./node_modules/ember-cli/bin/ember test --reporter=xunit > shippable/testresults/result.xml
   cache: true
   cache_dir_list:
