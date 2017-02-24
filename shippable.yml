@@ -1,11 +1,10 @@
 language: node_js
 
-build_image: shippableimages/ubuntu1404_nodejs
-
 env:
   CI=true
 
-node_js: 0.12
+node_js:
+   - 6.10
 
 before_install:
   - apt-get update --yes && apt-get install --yes phantomjs libfreetype6 libfontconfig
