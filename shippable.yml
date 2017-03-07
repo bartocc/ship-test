@@ -7,7 +7,7 @@ node_js:
    - 6.4
 
 addons:
-  firefox: "50.1"
+  firefox: "50.1.0"
 
 build:
   ci:
